@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LocalDatabaseOperations/DatabaseConverters.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c8227d3b-ad10-44a6-acdb-126b1645b577.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c8227d3b-ad10-44a6-acdb-126b1645b577.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dev/CardProcessing/DatabaseScraper$ThreadHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dev/CardProcessing/DatabaseScraper$ThreadHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dev/CardProcessing/DatabaseScraper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dev/CardProcessing/DatabaseScraper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dev/LocalDatabaseOperations/CardDatabaseManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dev/LocalDatabaseOperations/CardDatabaseManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dev/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dev/sample/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardProcessing/DatabaseScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CardProcessing/DatabaseScraper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LocalDatabaseOperations/CardDatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LocalDatabaseOperations/CardDatabaseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test" beforeDir="false" afterPath="$PROJECT_DIR$/test" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,7 +42,45 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Card-Database" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Card-Database" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Card-Database" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="test" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="test" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="test" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="test" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="Spells_and_Traps: table" type="3d80ac25:SqliteImplModel$Table" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="DebuggerManager">
@@ -73,6 +129,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="module-info" />
       </list>
     </option>
   </component>
@@ -82,7 +139,7 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/JavaScript Projects/LearningReactWebsite/learn_react" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectCodeStyleSettingsMigration">
@@ -107,6 +164,7 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
@@ -115,6 +173,8 @@
     <property name="project.structure.proportion" value="0.15039062" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -145,7 +205,7 @@
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="sample.Main" />
       <module name="Dev" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PROGRAM_PARAMETERS" value="false" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="sample.*" />
@@ -208,7 +268,9 @@
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1594047402304" duration="11913000" />
-      <workItem from="1594072395631" duration="516000" />
+      <workItem from="1594072395631" duration="12756000" />
+      <workItem from="1594486091705" duration="996000" />
+      <workItem from="1594487114101" duration="4842000" />
     </task>
     <servers />
   </component>
@@ -218,12 +280,29 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/JavaScript Projects/LearningReactWebsite/learn_react" />
+      <path value="$PROJECT_DIR$/JavaScript Projects/first_web_site" />
+      <path value="$PROJECT_DIR$/Sparda-Jukebox" />
+    </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="872" y="358" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594071214820">
+    <state x="872" y="358" key="#SQL_Dialects" timestamp="1594188170573">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="358" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594071214820" />
+    <state x="872" y="358" key="#SQL_Dialects/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594188170573" />
+    <state x="1010" y="454" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1594490959736">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1010" y="454" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594490959736" />
+    <state x="872" y="358" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594227791987">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="872" y="358" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594227791987" />
+    <state x="1005" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594192225435">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1005" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594192225435" />
     <state x="1147" y="487" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1594071129904">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -232,40 +311,33 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1010" y="446" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594072003214" />
-    <state x="986" y="441" key="FileChooserDialogImpl" timestamp="1594071552880">
+    <state x="986" y="441" key="FileChooserDialogImpl" timestamp="1594487091420">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="986" y="441" key="FileChooserDialogImpl/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594071552880" />
-    <state width="2517" height="399" key="GridCell.Tab.0.bottom" timestamp="1594072715869">
+    <state x="986" y="441" key="FileChooserDialogImpl/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594487091420" />
+    <state width="2517" height="315" key="GridCell.Tab.0.bottom" timestamp="1594492218746">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="399" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594072715869" />
-    <state width="2517" height="399" key="GridCell.Tab.0.center" timestamp="1594072715869">
+    <state width="2517" height="315" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594492218746" />
+    <state width="2517" height="315" key="GridCell.Tab.0.center" timestamp="1594492218745">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="399" key="GridCell.Tab.0.center/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594072715869" />
-    <state width="2517" height="399" key="GridCell.Tab.0.left" timestamp="1594072715868">
+    <state width="2517" height="315" key="GridCell.Tab.0.center/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594492218745" />
+    <state width="2517" height="315" key="GridCell.Tab.0.left" timestamp="1594492218745">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="399" key="GridCell.Tab.0.left/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594072715868" />
-    <state width="2517" height="399" key="GridCell.Tab.0.right" timestamp="1594072715869">
+    <state width="2517" height="315" key="GridCell.Tab.0.left/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594492218745" />
+    <state width="2517" height="315" key="GridCell.Tab.0.right" timestamp="1594492218746">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="399" key="GridCell.Tab.0.right/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594072715869" />
-    <state x="760" y="274" key="SettingsEditor" timestamp="1594071554978">
+    <state width="2517" height="315" key="GridCell.Tab.0.right/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594492218746" />
+    <state x="760" y="274" key="SettingsEditor" timestamp="1594486808137">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="760" y="274" key="SettingsEditor/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594071554978" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LocalDatabaseOperations/CardDatabaseManager.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="760" y="274" key="SettingsEditor/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594486808137" />
+    <state x="976" y="523" key="com.intellij.ide.util.TipDialog" timestamp="1594486136197">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="976" y="523" key="com.intellij.ide.util.TipDialog/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594486136197" />
   </component>
 </project>

@@ -3,6 +3,7 @@ package CardProcessing;
 import CardTypes.YuGiOhCard;
 import CardTypes.YuGiOhMonster;
 import CardTypes.YuGiOhSpellTrap;
+import LocalDatabaseOperations.CardDatabaseManager;
 import org.jsoup.HttpStatusException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -11,12 +12,13 @@ import org.jsoup.select.Elements;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -57,7 +59,9 @@ public class DatabaseScraper{
      * gets the information from the konami website
      * Rn it only gets the name
      */
-    public void runScrape() throws IOException, InterruptedException {
+    public void runScrape(boolean downloadCards) throws IOException, InterruptedException {
+
+        main2(downloadCards);
     }
     /**
      fills the pack Link List with all of the packs found in the elements argument
@@ -77,7 +81,7 @@ public class DatabaseScraper{
                 Element url = pack.getElementsByTag(INDIVIDUAL_INPUT_LINE_GETTER).get(0);
                 //adds the proper beginning to the url
                 //now I need to save the url
-                packLinkList.add(YUGIOH_DATABASE_URL_CUT + url.val());
+                //packLinkList.add(YUGIOH_DATABASE_URL_CUT + url.val());
                 //this is if I just want to make it a local variable
                 localPackLinkList.add(YUGIOH_DATABASE_URL_CUT + url.val());
             }
@@ -129,7 +133,7 @@ public class DatabaseScraper{
     }
 
 
-    private ArrayList<YuGiOhCard> getCardsFromPackLink(String packUrl) throws IOException {
+    private ArrayList<YuGiOhCard> getCardsFromPackLink(String packUrl, boolean downloadCards) throws IOException {
         // an array list containing all the cards pulled from the pack
         ArrayList<YuGiOhCard> allCardsInPack= new ArrayList<>();
 
@@ -208,21 +212,9 @@ public class DatabaseScraper{
                 System.out.println(cardImageUrl);
             }
             String cardImagePath = "";
-            try {
-                URL javaVerCardURL = new URL(cardImageUrl);
 
-                BufferedImage cardImage = ImageIO.read(javaVerCardURL);
-                //file stuff
-                String imageDirectory = System.getProperty("user.dir");
-                File cardImageFile = new File(imageDirectory, cardImage + ".png");
-                cardImagePath = cardImageFile.getAbsolutePath();
-                //compress later
-            } catch (IllegalStateException ie){
-                System.out.println(cardImageUrl);
-                System.out.println(cardName);
-                System.out.println(originalCardName);
-                ie.printStackTrace();
-
+            if (downloadCards) {
+                cardImagePath = downloadCardImages(cardImageUrl, cardName);
             }
 
             String packAbbreviation = null;
@@ -404,6 +396,30 @@ public class DatabaseScraper{
         return new YuGiOhSpellTrap(name, spellOrTrap, effect, pack, id, cardImagePath, trueDeepCardType);
     }
 
+    private String downloadCardImages(String cardImageUrl, String cardName){
+        try {
+            boolean card_dir = new File(System.getProperty("user.dir") + "/card_images/").mkdirs();
+            URL javaVerCardURL = new URL(cardImageUrl);
+            BufferedImage cardImage = ImageIO.read(javaVerCardURL);
+            String imageDirectory = System.getProperty("user.dir") + "/card_images/" + cardName + ".png";
+            File cardImageFile = new File(imageDirectory);
+            ImageIO.write(cardImage, "png", cardImageFile);
+            //file stuff
+
+            //File cardImageFile = new File(imageDirectory, cardImage + ".png");
+            return  cardImageFile.getAbsolutePath();
+            //compress later
+        } catch (IllegalStateException | MalformedURLException ie){
+            System.out.println(cardImageUrl);
+            System.out.println(cardName);
+            ie.printStackTrace();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 
 
 
@@ -434,6 +450,63 @@ public class DatabaseScraper{
         return new ArrayList<>(original);
     }
 
+    public synchronized void addCardsToDatabase(LinkedBlockingQueue<YuGiOhCard> cardsForProcessing, Connection conn) throws SQLException {
+        for (YuGiOhCard card : cardsForProcessing){
+            //split between monster and spell tables
+            if (card instanceof YuGiOhMonster){
+                YuGiOhMonster monster = ((YuGiOhMonster) card);
+                CardDatabaseManager.insertMonster(monster, conn);
+            }else if (card instanceof YuGiOhSpellTrap){
+                YuGiOhSpellTrap spellTrap = (YuGiOhSpellTrap) card;
+                CardDatabaseManager.insertSpellTrap(spellTrap, conn);
+            }
+
+        }
+    }
+    public void main2(boolean downloadCards) throws IOException, InterruptedException {
+        //make a database
+        Connection conn = CardDatabaseManager.createNewDatabase("Card-Database");
+        //get the path if its useful
+        //First, get the elements of all table on the database website
+        Elements allPacks = loopThroughAllTablesOnDatabaseWebsite();
+        //Next, use those elements to get all the links for the packLinkList
+        ArrayList<String> localPackLinkList = populatePackLinkList(allPacks);
+        //Use a queue to put the cards into threads
+        LinkedBlockingQueue<ArrayList<String>> threadingCards = prepareCardsForThreading(localPackLinkList);
+
+
+        int tempCount = 0;
+        System.out.println(threadingCards.size() + " prepared pakcages");
+        ArrayList<Thread> threadsForJoining = new ArrayList<>();
+
+        while (!threadingCards.isEmpty()){
+            ThreadHandler packProcessThread = new ThreadHandler(threadingCards.poll(), conn, tempCount, downloadCards);
+            tempCount += 1;
+            Thread wrapper = new Thread(packProcessThread);
+            wrapper.start();
+            threadsForJoining.add(wrapper);
+        }
+        for (Thread t : threadsForJoining){
+            t.join();
+        }
+        System.out.println("Processing Complete!");
+/*
+            }
+            for (String url: localPackLinkList){
+                ArrayList<String> temporaryURLHolder = new ArrayList<>();
+                temporaryURLHolder.add(url);
+                if (temporaryURLHolder.size() >= 50){
+                    ThreadHandler packProcessThread = new ThreadHandler(temporaryURLHolder, cardDB);
+                    Thread wrappedPackProcessThread = new Thread(packProcessThread);
+                    wrappedPackProcessThread.start();
+                    temporaryURLHolder.clear();
+                }
+
+ */
+
+
+    }
+
 
 
 
@@ -443,11 +516,15 @@ public class DatabaseScraper{
         private ArrayList<String> packUrls;
         private LinkedBlockingQueue<YuGiOhCard> cardsForProcessing;
         private int name;
+        private Connection conn;
+        private boolean downloadCards;
 
-        public ThreadHandler(ArrayList<String> packUrls, int name){
+        public ThreadHandler(ArrayList<String> packUrls, Connection conn, int name, boolean downloadCards){
             this.packUrls = packUrls;
             this.cardsForProcessing = new LinkedBlockingQueue<>();
             this.name = name;
+            this.conn = conn;
+            this.downloadCards = downloadCards;
         }
 
         @Override
@@ -455,7 +532,7 @@ public class DatabaseScraper{
             System.out.println("Thread " + name + " Started");
             try {
                 for (String link : packUrls){
-                    ArrayList<YuGiOhCard> newCards = getCardsFromPackLink(link);
+                    ArrayList<YuGiOhCard> newCards = getCardsFromPackLink(link, downloadCards);
                     //After, put every card in the pack in the queue for processing
                     cardsForProcessing.addAll(newCards);
                 }
@@ -463,9 +540,16 @@ public class DatabaseScraper{
                 e.printStackTrace();
             }
             System.out.println("Thread " + name + " Finished");
+            try {
+                addCardsToDatabase(cardsForProcessing, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
 
         }
     }
+
 
 /**
  * may delete later bcs database class should handle this
