@@ -4,11 +4,13 @@ import CardTypes.YuGiOhCard;
 import CardTypes.YuGiOhMonster;
 import CardTypes.YuGiOhSpellTrap;
 import LocalDatabaseOperations.CardDatabaseManager;
+import javafx.application.Platform;
 import org.jsoup.HttpStatusException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import sample.Main;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -45,6 +47,7 @@ public class DatabaseScraper{
     private static final String CARD_LIST_IN_PACK_GETTER = "box_list";
     //the list of urls for the packs
     private ArrayList<String> packLinkList;
+    private Main view = new Main();
 
 
 
@@ -275,6 +278,11 @@ public class DatabaseScraper{
                 allCardsInPack.add(newMonster);
             }
         }
+
+        Platform.runLater(() -> view.updateProgress(packName + " card extraction complete!"));
+
+
+
         System.out.println(packName + " card extraction complete!");
         return allCardsInPack;
     }
@@ -396,6 +404,7 @@ public class DatabaseScraper{
         return new YuGiOhSpellTrap(name, spellOrTrap, effect, pack, id, cardImagePath, trueDeepCardType);
     }
 
+
     private String downloadCardImages(String cardImageUrl, String cardName){
         try {
             boolean card_dir = new File(System.getProperty("user.dir") + "/card_images/").mkdirs();
@@ -437,7 +446,7 @@ public class DatabaseScraper{
         for (int i = 0; i < cardsForPrep.size(); i++){
             tempCards.add(cardsForPrep.get(i));
             changeCount += 1;
-            if (changeCount >= 10 || i == cardsForPrep.size() - 1){
+            if (changeCount >= 100 || i == cardsForPrep.size() - 1){
                 threadingPackage.add(cloneArrayList(tempCards));
                 changeCount = 0;
                 tempCards.clear();
