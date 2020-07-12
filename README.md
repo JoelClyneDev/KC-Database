@@ -3,7 +3,6 @@ Ever wanted to make a project with YuGiOh card data? Well search no more because
 This program allows the user to generate a SQLite database with data from all cards in the Yu-Gi-Oh TCG.
 And as a bonus, the user can even download pictures of all the cards in a seperate folder, with a link to the cards' paths in the database!
 
-![](out/GitHubImages/Application_Screen.PNG)
 
 ## Getting Started
 
@@ -24,6 +23,8 @@ For development - Windows, Mac, or Linux with...
 Double click on the program to open it
 Toggle Downloading cards with the download cards button and click start.
 Due to the high volume of cards, the extraction may take around 20 -30 minutes, so just wait until the bottom says Extraction Complete!
+
+![](out/GitHubImages/Application_Screen.PNG)
 
 ## Built With
 
