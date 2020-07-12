@@ -10,9 +10,9 @@ For using the program, just download the exe file (or jar if you have java insta
 For development, just clone the project and open the folder in an IDE
 
 ### Prerequisites
-For using the exe file - run Windows
-For the jar file, - Windows, Mac, or Linux with Java installed
-For development - Windows, Mac, or Linux with...
+*For using the exe file - run Windows
+*For the jar file, - Windows, Mac, or Linux with Java installed
+*For development - Windows, Mac, or Linux with...
 - Java
 - JavaFX
 - Jsoup
