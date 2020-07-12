@@ -6,21 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Dev_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/BootlegMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_30_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/KCFIles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Card-Database" beforeDir="false" afterPath="$PROJECT_DIR$/Card-Database" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dev.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dev.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dev/CardProcessing/DatabaseScraper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dev/CardProcessing/DatabaseScraper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dev/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dev/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dev/sample/Main$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dev/sample/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardProcessing/DatabaseScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CardProcessing/DatabaseScraper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/KCExtractorGUI.java" afterDir="false" />
-    </list>
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -171,7 +157,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="F:/Java/javafx-sdk-11.0.2/bin/vcruntime140.dll" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15039062" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -271,7 +257,7 @@
       <workItem from="1594047402304" duration="11913000" />
       <workItem from="1594072395631" duration="12756000" />
       <workItem from="1594486091705" duration="996000" />
-      <workItem from="1594487114101" duration="18579000" />
+      <workItem from="1594487114101" duration="19223000" />
     </task>
     <servers />
   </component>
@@ -309,6 +295,10 @@
     </state>
     <state x="1147" y="487" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594526495504" />
     <state x="3420" y="722" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1400/2560.360.1920.1040@2560.360.1920.1040" timestamp="1594534573990" />
+    <state x="3480" y="684" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1594575487688">
+      <screen x="2560" y="360" width="1920" height="1040" />
+    </state>
+    <state x="3480" y="684" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.0.2560.1400/2560.360.1920.1040@2560.360.1920.1040" timestamp="1594575487688" />
     <state x="1010" y="446" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594072003214">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -342,11 +332,11 @@
     </state>
     <state width="2517" height="315" key="GridCell.Tab.0.right/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594526562448" />
     <state width="1877" height="328" key="GridCell.Tab.0.right/0.0.2560.1400/2560.360.1920.1040@2560.360.1920.1040" timestamp="1594533530725" />
-    <state x="3130" y="548" key="SettingsEditor" timestamp="1594534630451">
+    <state x="3130" y="548" key="SettingsEditor" timestamp="1594575488621">
       <screen x="2560" y="360" width="1920" height="1040" />
     </state>
     <state x="2988" y="532" key="SettingsEditor/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1594529399695" />
-    <state x="3130" y="548" key="SettingsEditor/0.0.2560.1400/2560.360.1920.1040@2560.360.1920.1040" timestamp="1594534630451" />
+    <state x="3130" y="548" key="SettingsEditor/0.0.2560.1400/2560.360.1920.1040@2560.360.1920.1040" timestamp="1594575488621" />
     <state x="976" y="523" key="com.intellij.ide.util.TipDialog" timestamp="1594486136197">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
