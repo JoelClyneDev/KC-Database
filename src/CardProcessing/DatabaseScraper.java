@@ -10,7 +10,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import sample.Main;
+import sample.KCExtractorGUI;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -47,7 +47,7 @@ public class DatabaseScraper{
     private static final String CARD_LIST_IN_PACK_GETTER = "box_list";
     //the list of urls for the packs
     private ArrayList<String> packLinkList;
-    private Main view = new Main();
+    private KCExtractorGUI view = new KCExtractorGUI();
 
 
 
